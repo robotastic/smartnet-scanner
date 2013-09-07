@@ -1,6 +1,6 @@
 ## Smartnet Scanner
 
-GNURadio based scanner for SmartNet II Digital radio systems.
+GNURadio based scanner for SmartNet II Digital radio systems. It is for systems that use P25 CAI for the voice channels instead of analog.
 
 ### Channel List
 In order to work, the scanner needs a list of the talkgroups on the system. This is stored in a Comma Sperated Value (CSV) file, that should be name ChanList.csv.
