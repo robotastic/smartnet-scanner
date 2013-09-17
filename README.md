@@ -24,6 +24,8 @@ Once all this is installed then
 ### Parameters
 Here are the options available for the scanner. I put the parameters I use in _examplestart.sh_.
 
+	./smartnet --freq 856187500.0 --center 857000000.0  --rate 8000000 --error -5500 --rfgain 14 --ifgain 35 --bbgain 35
+
 
 **--rfgain** _14_
 
