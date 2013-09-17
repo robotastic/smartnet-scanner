@@ -1,5 +1,7 @@
 ## Smartnet Scanner
 
+![](//scanner.png)
+
 GNURadio based scanner for SmartNet II Digital radio systems. It is for systems that use P25 CAI for the voice channels instead of analog.
 
 ### Channel List
