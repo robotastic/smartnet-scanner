@@ -6,6 +6,7 @@ GNURadio based scanner for SmartNet II Digital radio systems. It is for systems 
 In order to work, the scanner needs a list of the talkgroups on the system. This is stored in a Comma Sperated Value (CSV) file, that should be named ChanList.csv.
 
 In order to get this data:
+
 1. Goto [Radio Reference](http://www.radioreference.com/apps/db/) and find the system.
 2. Click on "List All in one table". 
 3. Select the tabel and copy it into a spreadsheet program like Excel, or Google Docs.
