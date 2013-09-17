@@ -3,13 +3,16 @@
 GNURadio based scanner for SmartNet II Digital radio systems. It is for systems that use P25 CAI for the voice channels instead of analog.
 
 ### Channel List
-In order to work, the scanner needs a list of the talkgroups on the system. This is stored in a Comma Sperated Value (CSV) file, that should be name ChanList.csv.
+In order to work, the scanner needs a list of the talkgroups on the system. This is stored in a Comma Sperated Value (CSV) file, that should be named ChanList.csv.
 
-In order to get this data, goto [Radio Reference](http://www.radioreference.com/apps/db/) and find the system. Click on "List All in one table". Select the tabel and copy it into a spreadsheet program like Excel, or Google Docs. It should have 7 different. The value in the collumns should be as follows: 
-
- `DEC - HEX - Mode - Alpha Tag - Description - Tag`
-
-Save this file in the CSV format. 
+In order to get this data:
+1. Goto [Radio Reference](http://www.radioreference.com/apps/db/) and find the system.
+2. Click on "List All in one table". 
+3. Select the tabel and copy it into a spreadsheet program like Excel, or Google Docs.
+4. It should have 7 different columns. 
+5. The value in the collumns should be as follows: 
+ `DEC - HEX - Mode - Alpha Tag - Description - Tag - Group`
+6. Save this file in the CSV format. 
 
 ### Installation
 **Requirements**
