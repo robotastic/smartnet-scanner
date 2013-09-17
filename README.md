@@ -24,18 +24,29 @@ Once all this is installed then
 ### Parameters
 Here are the options available for the scanner. I put the parameters I use in _examplestart.sh_.
 
-**--rfgain**
+**--rfgain** _14_
 This is the standard gain that you usually set with your SDR program. For the HackRF, it is either on or off. To turn it one, set it to 14.
-**--ifgain**
-This is an additional gain option that is useful for the HackRF, but may not be set able with SDR. 
-**--bbgain**
-This is an additional gain option that is useful for the HackRF, but may not be set able with SDR. 
-**--rate**
-This is the sample rate that will be used. You want to make sure that the sampling rate you pick is equal to or large than the range of frequencies used by the 
 
-Once you run the file you will see a large FFT that will display all of the spectrum the SDR sees. You can type in the center frequency into the Frequency box. You want to pick a center frequency that is close to your target frequency, but not the same. This is because there is some DC interference right at the center frequency. In order to tune in your target frequency, you type in the offset into the Xlate Offset box. So if you are trying to tune in 856.8175 Mhz, you could type 856800000 into the Frequency box and 17500 into the Xlating Offset box. (You may actually need to type -17500, I get confused on this and I think the final frequency display is broken). This will tune you to the correct frequency.
+**--ifgain** _35_
+This is an additional gain option that is useful for the HackRF, but may not be set able with SDR. 
 
-Unforunately SDRs are not 100% accruate. Click on the Xlate-1 tab. It will display an FFT of the channel that you are trying to decode. Use Fine Offset slider to center the spike of your channel in the middle. You may need to adjust the Gain up or down to get it to play correctly. The gain slider adjusts the IF & BB gain used in the HackRF. You could tie it to the RF gain instead if you change the OsmoSDR Source block.
+**--bbgain** _35_
+This is an additional gain option that is useful for the HackRF, but may not be set able with SDR.
+
+**--rate** _4000000_
+This is the sample rate that will be used. You want to make sure that the sampling rate you pick is equal to or large than the range of frequencies used by the radio system you are monitoring. Try to make it as small as possible though or else things will be slow because you will have to process lots of extra data. 
+**--center** _857000000.0_
+This is the center frequency that the SDR will be tuned to. It should be in middle of the lowest frequency and the highest frequency of the system you are trying to monitor. There is usally a spike at the center, so make sure you don't have the center freq landing on one of the channels in the radio system.
+
+**--freq** _856187500.0_
+This is the SmartNet control channel frequency for the system you monitoring. This program will listen to it and track the different channel assignments for the talkgroups. Check [Radio Reference](http://www.radioreference.com/apps/db/) to find this frequency.
+
+**--error** _-5500_
+SDRs are great, but the tuning is always off by a little unless you have an external clock. This setting lets you correct for this error. The amount of error will generally be different for each device. For my HackRF, I have found the amount of error to be pretty stable though. However it is different at different spots in the sprectrum, so figure it out for each system you are looking at. In order to find yours, fire up a program like  [GQRX](http://gqrx.dk/), tune in the control channel for the system you want to monitor and determine how far it is off from the specified frequency. Note: the frequency tuned in is actuall calculated as: _target - error_. So for with system it was: Target = 856187500.0 and Actual = 85619300.0, so the error was: Target - Actual = -5500.
+
+
+
+
 
 
 
