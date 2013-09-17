@@ -18,10 +18,9 @@ Save this file in the CSV format.
 
 Once all this is installed then
 
-`cmake .`
-`make`
+`cmake .
+make`
 
-![](//scanner.png)
 
 
 
