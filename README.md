@@ -21,7 +21,7 @@ Once all this is installed then
 `cmake .`
 `make`
 
-
+![](//scanner.png)
 
 
 
