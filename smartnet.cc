@@ -46,8 +46,8 @@
 
 #include "audio_receiver_dsd.h"
 #include "talkgroup.h"
-#include <smartnet_crc.h>
-#include <smartnet_deinterleave.h>
+#include "smartnet_crc.h"
+#include "smartnet_deinterleave.h"
 
 #include <osmosdr_source_c.h>
 #include <osmosdr_sink_c.h>
