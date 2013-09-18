@@ -19,7 +19,7 @@
 #include <filter/rational_resampler_base_ccc.h>
 #include <gr_quadrature_demod_cf.h>
 #include <analog/quadrature_demod_cf.h>
-#include <dsd_block_ff.h>
+#include "dsd_block_ff.h"
 #include <gr_sig_source_f.h>
 #include <gr_sig_source_c.h>
 #include <gr_multiply_cc.h>

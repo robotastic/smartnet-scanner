@@ -119,7 +119,7 @@ link_directories(
     ${GNURADIO_CORE_LIBRARY_DIRS}
     ${LIBOSMOSDR_LIBRARIES}
     ${LIBDSD_LIBRARIES}
-	/usr/local/lib/
+    /usr/local/lib/
 )
 
 
