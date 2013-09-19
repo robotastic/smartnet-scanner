@@ -30,7 +30,7 @@
 #include <stdio.h>
 #include <gr_tags.h>
 #include <sstream>
-#include <smartnet_types.h>
+#include "smartnet_types.h"
 
 #define VERBOSE 0
 
