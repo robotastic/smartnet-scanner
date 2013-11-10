@@ -32,6 +32,7 @@ extern "C"
 }
 */
 
+#define NZEROS 60
 
 struct mbe_parameters
 {
@@ -181,6 +182,7 @@ typedef struct
   int output_num_samples;
   int output_length;
   int output_finished;
+float xv[NZEROS+1];
 } dsd_state;
 
 
@@ -205,6 +207,7 @@ enum dsd_modulation_optimizations {
 
 typedef struct
 {
+  int num;
   dsd_opts opts;
   dsd_state state;
 } dsd_params;
@@ -233,7 +236,7 @@ typedef boost::shared_ptr<dsd_block_ff> dsd_block_ff_sptr;
  */
 DSD_API dsd_block_ff_sptr dsd_make_block_ff (dsd_frame_mode frame = dsd_FRAME_AUTO_DETECT,
                                              dsd_modulation_optimizations mod = dsd_MOD_AUTO_SELECT,
-                                             int uvquality = 3, bool errorbars = true, int verbosity = 2, bool empty = false);
+                                             int uvquality = 3, bool errorbars = true, int verbosity = 2, bool empty = false, int num=-1);
 
 /*!
  * \brief pass discriminator output through Digital Speech Decoder
@@ -246,14 +249,14 @@ private:
   // The friend declaration allows dsd_make_block_ff to
   // access the private constructor.
 
-  friend DSD_API dsd_block_ff_sptr dsd_make_block_ff (dsd_frame_mode frame, dsd_modulation_optimizations mod, int uvquality, bool errorbars, int verbosity, bool empty);
+  friend DSD_API dsd_block_ff_sptr dsd_make_block_ff (dsd_frame_mode frame, dsd_modulation_optimizations mod, int uvquality, bool errorbars, int verbosity, bool empty, int num);
 
   dsd_params params;
 
   /*!
    * \brief pass discriminator output thread Digital Speech Decoder
    */
-  dsd_block_ff (dsd_frame_mode frame, dsd_modulation_optimizations mod, int uvquality, bool errorbars, int verbosity, bool empty); // private constructor
+  dsd_block_ff (dsd_frame_mode frame, dsd_modulation_optimizations mod, int uvquality, bool errorbars, int verbosity, bool empty, int num); // private constructor
 bool empty_frames;
   
  public:
@@ -261,6 +264,7 @@ bool empty_frames;
 
   // Where all the action really happens
 
+  int close();
  int general_work (int noutput_items,
 			gr_vector_int &ninput_items,
 			gr_vector_const_void_star &input_items,
